@@ -19,7 +19,8 @@ if [ $gocheck = 127 ]; then #not_install
     sleep 1
 elif [ $gocheck = 0 ]; then #installed
     echo "Go already installed"
-    sudo rm -rf /usr/local/gowget https://golang.org/dl/go1.15.8.linux-amd64.tar.gz &&
+    sudo rm -rf /usr/local/go
+    wget https://golang.org/dl/go1.15.8.linux-amd64.tar.gz &&
     sleep 2
     sudo tar -C /usr/local -xzf go1.15.8.linux-amd64.tar.gz &&
     sleep 2
