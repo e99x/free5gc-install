@@ -10,14 +10,27 @@ if [ $gocheck = 127 ]; then #not_install
     sudo tar -C /usr/local -xzf go1.15.8.linux-amd64.tar.gz &&
     sleep 2
     mkdir -p ~/go/{bin,pkg,src} &&
-    sleep 2
+    sleep 1
     echo 'export GOPATH=$HOME/go' >> ~/.bashrc &&
     echo 'export GOROOT=/usr/local/go' >> ~/.bashrc &&
     echo 'export PATH=$PATH:$GOPATH/bin:$GOROOT/bin' >> ~/.bashrc &&
     echo 'export GO111MODULE=auto' >> ~/.bashrc &&
     source ~/.bashrc
+    sleep 1
 elif [ $gocheck = 0 ]; then #installed
     echo "Go already installed"
+    sudo rm -rf /usr/local/gowget https://golang.org/dl/go1.15.8.linux-amd64.tar.gz &&
+    sleep 2
+    sudo tar -C /usr/local -xzf go1.15.8.linux-amd64.tar.gz &&
+    sleep 2
+    mkdir -p ~/go/{bin,pkg,src} &&
+    sleep 1
+    echo 'export GOPATH=$HOME/go' >> ~/.bashrc &&
+    echo 'export GOROOT=/usr/local/go' >> ~/.bashrc &&
+    echo 'export PATH=$PATH:$GOPATH/bin:$GOROOT/bin' >> ~/.bashrc &&
+    echo 'export GO111MODULE=auto' >> ~/.bashrc &&
+    source ~/.bashrc
+    sleep 1
 else
     Please install manually go.
     exit 1
