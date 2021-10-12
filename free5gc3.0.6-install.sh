@@ -11,11 +11,7 @@ if [ $gocheck = 127 ]; then #not_install
     sleep 2
     mkdir -p ~/go/{bin,pkg,src} &&
     sleep 1
-    echo 'export GOPATH=$HOME/go' >> ~/.bashrc &&
-    echo 'export GOROOT=/usr/local/go' >> ~/.bashrc &&
-    echo 'export PATH=$PATH:$GOPATH/bin:$GOROOT/bin' >> ~/.bashrc &&
-    echo 'export GO111MODULE=auto' >> ~/.bashrc &&
-    source ~/.bashrc
+    export PATH=$PATH:/usr/local/go/bin
     sleep 1
 elif [ $gocheck = 0 ]; then #installed
     echo "Go already installed"
@@ -26,11 +22,7 @@ elif [ $gocheck = 0 ]; then #installed
     sleep 2
     mkdir -p ~/go/{bin,pkg,src} &&
     sleep 1
-    echo 'export GOPATH=$HOME/go' >> ~/.bashrc &&
-    echo 'export GOROOT=/usr/local/go' >> ~/.bashrc &&
-    echo 'export PATH=$PATH:$GOPATH/bin:$GOROOT/bin' >> ~/.bashrc &&
-    echo 'export GO111MODULE=auto' >> ~/.bashrc &&
-    source ~/.bashrc
+    export PATH=$PATH:/usr/local/go/bin
     sleep 1
 else
     Please install manually go.
