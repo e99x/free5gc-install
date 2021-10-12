@@ -6,8 +6,11 @@ gocheck=$?
 
 if [ $gocheck = 127 ]; then #not_install
     wget https://golang.org/dl/go1.15.8.linux-amd64.tar.gz &&
+    sleep 2
     sudo tar -C /usr/local -xzf go1.15.8.linux-amd64.tar.gz &&
+    sleep 2
     mkdir -p ~/go/{bin,pkg,src} &&
+    sleep 2
     echo 'export GOPATH=$HOME/go' >> ~/.bashrc &&
     echo 'export GOROOT=/usr/local/go' >> ~/.bashrc &&
     echo 'export PATH=$PATH:$GOPATH/bin:$GOROOT/bin' >> ~/.bashrc &&
